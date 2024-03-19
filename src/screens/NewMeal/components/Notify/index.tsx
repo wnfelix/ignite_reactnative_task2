@@ -14,7 +14,7 @@ export function Notify(props: INotifyProps) {
 	const navigation = useNavigation();
 
 	function handleGoHome() {
-		navigation.navigate("newMeal");
+		navigation.navigate("home");
 	}
 
 	return (
