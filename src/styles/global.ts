@@ -9,18 +9,29 @@ export const CenteredTouchableOpacity = styled.TouchableOpacity`
 
 export const ColorText = styled.Text<{
 	color?: keyof typeof theme.COLORS;
+	size?: keyof typeof theme.FONT_SIZE;
 	bold?: boolean;
 }>`
-	${({ theme, color = "BLACK", bold = false }) => css`
+	${({ theme, color = "BLACK", bold = false, size = "MD" }) => css`
 		color: ${theme.COLORS[color]};
 		font-weight: ${bold ? "bold" : "normal"};
+		font-size: ${theme.FONT_SIZE[size]}px;
+		font-family: ${bold ? theme.FONT_FAMILY.REGULAR : theme.FONT_FAMILY.BOLD};
 	`}
+`;
+
+export const ColorView = styled.View<{
+	color?: keyof typeof theme.COLORS;
+}>`
+	${({ theme, color = "WHITE" }) => css`
+		background-color: ${theme.COLORS[color]};
+	`}
+	border-radius: 20px;
 `;
 
 export const Button = styled(CenteredTouchableOpacity)`
 	${({ theme }) => css`
 		background-color: ${theme.COLORS.BLACK};
-		color: ${theme.COLORS.WHITE};
 	`}
 	height: 60px;
 `;

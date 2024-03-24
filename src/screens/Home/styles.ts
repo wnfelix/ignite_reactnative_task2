@@ -1,13 +1,15 @@
-import { ArrowUpRight } from "phosphor-react-native";
+import { Button } from "@styles/global";
+import { ArrowUpRight, Plus } from "phosphor-react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import styled, { css } from "styled-components/native";
 
 interface IStyledProps {
 	insideDiety: boolean;
 }
 
-export const Container = styled.View`
+export const Container = styled(SafeAreaView)`
 	flex: 1;
-	padding: 20px;
+	padding: 0 20px;
 	gap: 20px;
 `;
 
@@ -17,7 +19,9 @@ export const AvatarImage = styled.Image.attrs(() => ({
 	height: 40px;
 	width: 40px;
 	border-radius: 50px;
-	border: 1px solid ${({ theme }) => theme.COLORS.BLACK};
+	border-color: ${({ theme }) => theme.COLORS.BLACK};
+	border-width: 1px;
+	border-style: solid;
 `;
 
 export const Header = styled.View`
@@ -36,6 +40,27 @@ export const CounterSection = styled.View<IStyledProps>`
 	height: 110px;
 	padding: 5px;
 	align-items: center;
+`;
+
+export const NewSection = styled.View`
+	gap: 10px;
+`;
+
+export const AddButton = styled(Button)`
+	flex-direction: row;
+	gap: 8px;
+`;
+
+export const AddIcon = styled(Plus).attrs(({ theme }) => ({
+	size: 16,
+	color: theme.COLORS.WHITE,
+}))``;
+
+export const AddText = styled.Text`
+	${({ theme }) => css`
+		color: ${theme.COLORS.WHITE};
+		font-family: ${theme.FONT_FAMILY.BOLD};
+	`}
 `;
 
 export const IconDetail = styled(ArrowUpRight).attrs<IStyledProps>(

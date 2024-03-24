@@ -2,6 +2,7 @@ export default {
 	COLORS: {
 		WHITE: "#FFFFFF",
 		BLACK: "#000000",
+		BLACK_25: "rgba(0,0,0,0.25)",
 
 		RED_DARK: "#BF3B44",
 		RED_MID: "#F3BABD",

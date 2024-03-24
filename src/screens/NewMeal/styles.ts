@@ -1,9 +1,10 @@
 import { DateTimePicker } from "@components/DateTimePicker";
 import { Button, CenteredTouchableOpacity } from "@styles/global";
 import { DotOutline } from "phosphor-react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import styled, { css } from "styled-components/native";
 
-export const Container = styled.View`
+export const Container = styled(SafeAreaView)`
 	background-color: ${({ theme }) => theme.COLORS.GRAY_500};
 	flex: 1;
 `;
@@ -79,7 +80,7 @@ export const CheckIcon = styled(DotOutline).attrs<{ checked: boolean }>(
 		color: checked ? theme.COLORS.GREEN_DARK : theme.COLORS.RED_DARK,
 	})
 )`
-	border: 1px solid black;
+	border: 1px solid ${({ theme }) => theme.COLORS.BLACK};
 `;
 
 export const AddButton = styled(Button)`

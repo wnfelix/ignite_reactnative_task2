@@ -7,6 +7,7 @@ import {
 	Nunito_400Regular,
 	Nunito_700Bold,
 } from "@expo-google-fonts/nunito";
+import { Loading } from "@components/Loading";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({ Nunito_400Regular, Nunito_700Bold });
@@ -18,7 +19,7 @@ export default function App() {
 				backgroundColor="transparent"
 				translucent
 			/>
-			{fontsLoaded && <Routes />}
+			{!fontsLoaded ? <Loading /> : <Routes />}
 		</ThemeProvider>
 	);
 }

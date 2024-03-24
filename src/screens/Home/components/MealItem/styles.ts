@@ -2,7 +2,9 @@ import { CenteredTouchableOpacity } from "@styles/global";
 import styled, { css } from "styled-components/native";
 
 export const Container = styled(CenteredTouchableOpacity)`
-	border: 1px solid ${({ theme }) => theme.COLORS.GRAY_400};
+	border-color: ${({ theme }) => theme.COLORS.GRAY_400};
+	border-width: 1px;
+	border-style: solid;
 	flex-direction: row;
 	border-radius: 7px;
 	padding: 12px 10px;
@@ -12,8 +14,11 @@ export const Container = styled(CenteredTouchableOpacity)`
 `;
 
 export const MealName = styled.Text`
+	${({ theme }) => css`
+		font-size: ${theme.FONT_SIZE.MD}px;
+		border-left-color: ${theme.COLORS.GRAY_400};
+	`}
 	border-left-width: 1px;
-	border-left-color: ${({ theme }) => theme.COLORS.GRAY_400};
 	padding-left: 10px;
 	flex: 1;
 `;
